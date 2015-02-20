@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+	<modules>
+		<Pena_JNE>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Pena_JNE>
+	</modules>
+</config>
