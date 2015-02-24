@@ -1,0 +1,18 @@
+@media screen and (max-width: 500px) {
+  .header .logo {
+    margin-right: 0px !important;
+  }
+  .header .logo img {
+    width: 200px !important;
+    height: auto !important;
+  }
+  
+  .fancybox-inner img {
+    width: 200px !important;
+    height: auto !important;
+  }
+}
+
+.header .logo {
+  max-width: 320px;
+}

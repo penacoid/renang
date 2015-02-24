@@ -15,7 +15,8 @@
 /app/design/frontend/base/*
 /app/design/frontend/default/*
 /app/design/frontend/rwd/*
-/app/design/frontend/smartwave/*
+/app/design/frontend/smartwave/default/*
+/app/design/frontend/smartwave/porto/*
 /app/design/install/*
 /app/etc/config.*
 /app/etc/local.*
@@ -43,7 +44,8 @@
 /skin/frontend/base/*
 /skin/frontend/default/*
 /skin/frontend/rwd/*
-/skin/frontend/smartwave/*
+/skin/frontend/smartwave/default/*
+/skin/frontend/smartwave/porto/*
 /skin/install/*
 /var/*
 /.htaccess*

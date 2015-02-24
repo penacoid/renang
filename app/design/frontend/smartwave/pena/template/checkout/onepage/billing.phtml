@@ -1,0 +1,12 @@
+<div class="field">
+<label for="billing:jobtitle"><?php echo $this->__('Job Title') ?></label>
+<div class="input-box">
+<input type="text" id="billing:jobtitle" name="billing[jobtitle]" value="<?php echo $this->htmlEscape($this->getAddress()->getJobtitle()) ?>" title="<?php echo $this->__('Job Title') ?>" class="input-text" />
+</div>
+</div>
+<div class="field">
+<label for="billing:company"><?php echo $this->__('Company') ?></label>
+<div class="input-box">
+<input type="text" id="billing:company" name="billing[company]" value="<?php echo $this->htmlEscape($this->getAddress()->getCompany()) ?>" title="<?php echo $this->__('Company') ?>" class="input-text" />
+</div>
+</div>
