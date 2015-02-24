@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <config>
 	<modules>
-		<Pena_JNE>
+		<Pena_Shipping>
 			<active>true</active>
 			<codePool>local</codePool>
-		</Pena_JNE>
+		</Pena_Shipping>
 	</modules>
 </config>
