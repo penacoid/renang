@@ -12,6 +12,8 @@
             <action method="addJs"><script>smartwave/jquery/jquery-noconflict.js</script></action>
             <action method="addJs"><script>smartwave/jquery/jquery-ui-1.10.4.min.js</script></action>
             <action method="addItem"><type>js_css</type><name>smartwave/jquery/jquery-ui-1.10.4.min.css</name></action>
+            <action method="addJs"><script>smartwave/jquery/plugins/fancybox/js/jquery.fancybox.js</script></action>
+            <action method="addItem"><type>js_css</type><name>smartwave/jquery/plugins/fancybox/css/jquery.fancybox.css</name></action>
             <action method="addItem"><type>skin_js</type><name>js/wow.min.js</name></action>
             <action method="addItem"><type>js</type><name>smartwave/jquery/plugins/selectbox/jquery.selectbox.js</name><params/></action>
             <action method="addItem"><type>js</type><name>smartwave/jquery/plugins/parallax/jquery.stellar.min.js</name><params/></action>
@@ -40,6 +42,7 @@
             <action method="addCss" ifconfig="porto_settings/general/rtl" condition="0"><stylesheet>css/responsive.css</stylesheet></action>
             <action method="addCss" ifconfig="porto_settings/general/rtl" condition="1"><stylesheet>css/rtl-responsive.css</stylesheet></action>
             <action method="addCss" ifconfig="porto_settings/general/layout" condition="1024"><stylesheet>css/layout_1024.css</stylesheet></action>
+            <action method="addCss" ifconfig="porto_settings/general/layout" condition="1280"><stylesheet>css/layout_1280.css</stylesheet></action>
             <action method="addCss"><stylesheet helper="porto/cssconfig/getDesignFile"/></action>
             <action method="addCss"><stylesheet helper="porto/cssconfig/getSettingsFile"/></action>
             <action method="addCss" ifconfig="porto_settings/general/rtl" condition="0"><stylesheet>css/custom.css</stylesheet></action>
@@ -56,6 +59,7 @@
             <action method="setTemplate" ifconfig="porto_settings/header/type" condition="7"><template>page/html/header_type8.phtml</template></action>
             <action method="setTemplate" ifconfig="porto_settings/header/type" condition="8"><template>page/html/header_type9.phtml</template></action>
             <action method="setTemplate" ifconfig="porto_settings/header/type" condition="9"><template>page/html/header_type10.phtml</template></action>
+            <action method="setTemplate" ifconfig="porto_settings/header/type" condition="10"><template>page/html/header_type11.phtml</template></action>
             <block type="directory/currency" name="store_currency" template="page/switch/currency.phtml"/>
             <block type="checkout/cart_sidebar" name="minicart">
                 <action method="setTemplate"><template>checkout/cart/minicart.phtml</template></action>
@@ -89,6 +93,9 @@
             <block type="core/template" name="topnav.sidemobilemenu">
                 <action method="setTemplate" ifconfig="porto_settings/header/type" condition="9"><template>smartwave/megamenu/html/topnav.sidemobilemenu.phtml</template></action>
             </block>
+        </reference>
+        <reference name="page.header">
+            <action method="setTemplate" ifconfig="porto_settings/header/type" condition="10"><template>page/html/page_header_bg.phtml</template></action>
         </reference>
         <reference name="left">
             <remove name="currency"/>
