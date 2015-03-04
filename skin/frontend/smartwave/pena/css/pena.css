@@ -13,6 +13,27 @@
   }
 }
 
+@media screen and (max-width: 370px) {
+  .header .logo img {
+    width: 150px !important;
+    height: auto !important;
+  }
+  
+  .header-container.type4 .header > .logo {
+    padding-right: 0px !important;
+    padding-top: 8px !important;
+  }
+  
+  .fancybox-inner img {
+    width: 150px !important;
+    height: auto !important;
+  }
+}
+
 .header .logo {
   max-width: 320px;
+}
+
+.footer-bottom a.logo {
+  margin-right: 12px !important;
 }
