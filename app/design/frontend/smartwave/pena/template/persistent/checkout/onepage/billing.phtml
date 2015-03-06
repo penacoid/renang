@@ -82,15 +82,15 @@
                 <?php endif; ?>
                 <li class="fields">
                     <div class="field">
-                        <label for="billing:city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
+                        <label for="billing:country_id" class="required"><em>*</em><?php echo $this->__('Country') ?></label>
                         <div class="input-box">
-                            <input type="text" title="<?php echo $this->__('City') ?>" name="billing[city]" value="<?php echo $this->escapeHtml($this->getAddress()->getCity()) ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('city') ?>" id="billing:city" />
+                            <?php echo $this->getCountryHtmlSelect('billing') ?>
                         </div>
                     </div>
                     <div class="field">
                         <label for="billing:region_id" class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
-                        <div class="input-box">
-                            <select id="billing:region_id" name="billing[region_id]" title="<?php echo $this->__('State/Province') ?>" class="validate-select" style="display:none;">
+                        <div class="input-box">    
+                            <select id="billing:region_id" name="billing[region_id]" title="<?php echo $this->__('State/Province') ?>" class="validate-select " style="display:none;">
                                 <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
                             </select>
                             <script type="text/javascript">
@@ -98,7 +98,39 @@
                                 $('billing:region_id').setAttribute('defaultValue',  "<?php echo $this->getAddress()->getRegionId() ?>");
                             //]]>
                             </script>
-                            <input type="text" id="billing:region" name="billing[region]" value="<?php echo $this->escapeHtml($this->getAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('region') ?>" style="display:none;" />
+                            <input type="text" id="billing:region" name="billing[region]" value="<?php echo $this->escapeHtml($this->getAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="input-text autocomplete-region <?php echo $this->helper('customer/address')->getAttributeValidationClass('region') ?>"  />
+                            <input type="hidden" id="billing:region_id" name="billing[region_id]" value="<?php echo $this->escapeHtml($this->getAddress()->getRegionID()) ?>"  title="<?php echo $this->__('State/Province ID') ?>" class="input-text autocomplete-region-id <?php echo $this->helper('customer/address')->getAttributeValidationClass('region_id') ?>"  />
+                        </div>
+                    </div>                                     
+                </li>
+                <li class="fields">
+                    <div class="field">
+                        <label for="billing:city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
+                        <div class="input-box">
+                            <input type="text" title="<?php echo $this->__('City') ?>" name="billing[city]" value="<?php echo $this->escapeHtml($this->getAddress()->getCity()) ?>" class="input-text autocomplete-city <?php echo $this->helper('customer/address')->getAttributeValidationClass('city') ?>" id="billing:city" />
+                            <input type="hidden" title="<?php echo $this->__('City ID') ?>" name="billing[city_id]" value="<?php echo $this->escapeHtml($this->getAddress()->getCityID()) ?>" class="input-text autocomplete-city-id <?php echo $this->helper('customer/address')->getAttributeValidationClass('city_id') ?>" id="billing:city-id" />
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="billing:town" class="required"><em>*</em><?php echo $this->__('Town') ?></label>
+                        <div class="input-box">
+                            <input type="text" title="<?php echo $this->__('Town') ?>" name="billing[town]" value="<?php echo $this->escapeHtml($this->getAddress()->getTown()) ?>" class="input-text autocomplete-town <?php echo $this->helper('customer/address')->getAttributeValidationClass('town') ?>" id="billing:town" />
+                            <input type="hidden" title="<?php echo $this->__('Town ID') ?>" name="billing[town_id]" value="<?php echo $this->escapeHtml($this->getAddress()->getTownID()) ?>" class="input-text autocomplete-town-id <?php echo $this->helper('customer/address')->getAttributeValidationClass('town_id') ?>" id="billing:town_id" />
+                        </div>
+                    </div>  
+                                       
+                </li>
+                <li class="fields">
+                    <div class="field">
+                        <label for="billing:telephone" class="required"><em>*</em><?php echo $this->__('Telephone') ?></label>
+                        <div class="input-box">
+                            <input type="text" name="billing[telephone]" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="billing:telephone" />
+                        </div>
+                    </div>                   
+                    <div class="field">
+                        <label for="billing:fax"><?php echo $this->__('Fax') ?></label>
+                        <div class="input-box">
+                            <input type="text" name="billing[fax]" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) ?>" title="<?php echo $this->__('Fax') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" id="billing:fax" />
                         </div>
                     </div>
                 </li>
@@ -108,27 +140,7 @@
                         <div class="input-box">
                             <input type="text" title="<?php echo $this->__('Zip/Postal Code') ?>" name="billing[postcode]" id="billing:postcode" value="<?php echo $this->escapeHtml($this->getAddress()->getPostcode()) ?>" class="input-text validate-zip-international <?php echo $this->helper('customer/address')->getAttributeValidationClass('postcode') ?>" />
                         </div>
-                    </div>
-                    <div class="field">
-                        <label for="billing:country_id" class="required"><em>*</em><?php echo $this->__('Country') ?></label>
-                        <div class="input-box">
-                            <?php echo $this->getCountryHtmlSelect('billing') ?>
-                        </div>
-                    </div>
-                </li>
-                <li class="fields">
-                    <div class="field">
-                        <label for="billing:telephone" class="required"><em>*</em><?php echo $this->__('Telephone') ?></label>
-                        <div class="input-box">
-                            <input type="text" name="billing[telephone]" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="billing:telephone" />
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label for="billing:fax"><?php echo $this->__('Fax') ?></label>
-                        <div class="input-box">
-                            <input type="text" name="billing[fax]" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) ?>" title="<?php echo $this->__('Fax') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" id="billing:fax" />
-                        </div>
-                    </div>
+                    </div>   
                 </li>
                 <?php if(!$this->isCustomerLoggedIn()): ?>
 

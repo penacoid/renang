@@ -31,7 +31,7 @@
       <version>0.1.0</version>
     </Pena_Shipping>
   </modules>
-  
+ 
   <frontend>
     <layout>
       <updates>
@@ -43,6 +43,11 @@
   </frontend>
   
   <global>
+    <models>
+            <smashingmagazine_mycarrier>
+                <class>Pena_Shipping_Model</class>
+            </smashingmagazine_mycarrier>
+    </models>
     <resources>
       <pena_shipping_setup>
         <setup>
@@ -54,6 +59,25 @@
         </connection>
       </pena_shipping_setup>
     </resources>
+    <fieldsets>
+        <sales_copy_order_billing_address>
+            <town><to_order>*</to_order></town>
+        </sales_copy_order_billing_address>
+        <sales_copy_order_shipping_address>
+            <town><to_order>*</to_order></town>
+        </sales_copy_order_shipping_address>
+        <sales_convert_quote_address>
+            <town><to_order_address>*</to_order_address><to_customer_address>*</to_customer_address></town>
+        </sales_convert_quote_address>
+        <sales_convert_order_address>
+            <town><to_quote_address>*</to_quote_address></town>
+        </sales_convert_order_address>
+        <customer_address>
+             <town><to_quote_address>*</to_quote_address></town>
+        </customer_address>
+        <checkout_onepage_billing>
+            <town><to_customer>*</to_customer></town>
+        </checkout_onepage_billing>
+    </fieldsets>
   </global>
-  
 </config>

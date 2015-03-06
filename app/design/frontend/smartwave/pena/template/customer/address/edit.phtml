@@ -98,19 +98,10 @@
             <li class="fields">
                 <div class="field">
                     <label for="country" class="required"><em>*</em><?php echo $this->__('Country') ?></label>
-                    <div class="input-box">
+                    <div class="input-box">                   
                         <?php echo $this->getCountryHtmlSelect() ?>
                     </div>
                 </div>
-                <div class="field">
-                    <label for="city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
-                    <div class="input-box">
-                        <input type="text" name="city" value="<?php echo $this->escapeHtml($this->getAddress()->getCity()) ?>"  title="<?php echo $this->__('City') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('city') ?>" id="city" />
-                    </div>
-                </div>
-                
-            </li>
-            <li class="fields">
                 <div class="field">
                     <label for="region_id" class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
                     <div class="input-box">
@@ -122,13 +113,25 @@
                             $('region_id').setAttribute('defaultValue',  "<?php echo $this->getAddress()->getRegionId() ?>");
                         //]]>
                         </script>
-                        <input type="text" id="region" name="region" value="<?php echo $this->escapeHtml($this->getAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('region') ?>" />
+                        <input type="text" id="region" name="region" value="<?php echo $this->escapeHtml($this->getAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="input-text autocomplete-region <?php echo $this->helper('customer/address')->getAttributeValidationClass('region') ?>" />
+                        <input type="hidden" id="region_id" name="region_id" value="<?php echo $this->escapeHtml($this->getAddress()->getRegionID()) ?>"  title="<?php echo $this->__('State/Province ID') ?>" class="input-text autocomplete-region-id <?php echo $this->helper('customer/address')->getAttributeValidationClass('region_id') ?>" />
                     </div>
                 </div>
+                               
+            </li>
+            <li class="fields">
+                <div class="field">
+                    <label for="city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="city" value="<?php echo $this->escapeHtml($this->getAddress()->getCity()) ?>"  title="<?php echo $this->__('City') ?>" class="input-text autocomplete-city <?php echo $this->helper('customer/address')->getAttributeValidationClass('city') ?>" id="city" />
+                        <input type="hidden" name="city_id" value="<?php echo $this->escapeHtml($this->getAddress()->getCityID()) ?>"  title="<?php echo $this->__('City ID') ?>" class="input-text autocomplete-city-id <?php echo $this->helper('customer/address')->getAttributeValidationClass('city_id') ?>" id="city_id" />
+                    </div>
+                </div> 
                 <div class="field">
                     <label for="town" class="required"><em>*</em><?php echo $this->__('Town') ?></label>
                     <div class="input-box">
-                        <input type="text" name="town" value="<?php echo $this->escapeHtml($this->getAddress()->getTown()) ?>" title="<?php echo $this->__('Town') ?>" id="town" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('town') ?>" />
+                        <input type="text" name="town" value="<?php echo $this->escapeHtml($this->getAddress()->getTown()) ?>" title="<?php echo $this->__('Town') ?>" id="town" class="input-text autocomplete-town <?php echo $this->helper('customer/address')->getAttributeValidationClass('town') ?>" />
+                        <input type="hidden" name="town_id" value="<?php echo $this->escapeHtml($this->getAddress()->getTownID()) ?>" title="<?php echo $this->__('Town ID') ?>" id="town_id" class="input-text autocomplete-town-id <?php echo $this->helper('customer/address')->getAttributeValidationClass('town_id') ?>" />
                     </div>
                 </div>
             </li>

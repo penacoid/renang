@@ -287,12 +287,4 @@
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
     </sendfriend_product_send>
-    
-    <!-- Pena Custom Layout -->
-    <default>
-      <reference name="head">
-          <action method="addCss"><stylesheet>css/pena.css</stylesheet></action>
-          <action method="addItem"><type>skin_js</type><name>js/pena.js</name></action>
-      </reference>
-    </default>
 </layout>
